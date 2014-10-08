@@ -166,7 +166,7 @@ world  = {
             world.level++;
 
             // post message to user wall
-            var resp = VK.api('wall.post', {message: 'Я убил 13 школьников в игре "[club78383037|Жизнь компота]". &#128074; 
+            var resp = VK.api('wall.post', {message: '
 Теперь я Компот 3 уровня! &#128083; 
 
 Вот игра: 
