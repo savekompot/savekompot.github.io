@@ -173,6 +173,20 @@ world  = {
         var rand = Math.floor( Math.random() * level.length );
         this.popup = new Messi('Ты старался, Компот.<br/><br/>Твой счёт: <strong>' + score + '</strong> <img src="kompot_icon.png" alt="" /><br/>Твой лучший счёт: <strong>' + bestScore + '</strong> <img src="kompot_icon.png" alt="" /><br/>Уровень: <strong>' + (slevel-1) + '</strong> (<i>' + level[rand] + '</i>)',
             {title: title, titleClass: style, center: true, callback: world.start, width: 300, buttons: [{id: 0, label: label, val: 'X', class: btnClass}]});
+    
+        VK.Api.call('wall.post', {message: 'Я убил 13 школьников в игре "[club78383037|Жизнь компота]". &#128074; 
+Теперь я Компот 3 уровня! &#128083; 
+
+Вот игра: 
+http://vk.com/app4582228
+
+Слабо побить мой рекорд!? &#128640;
+
+#SaveKompot #KompotGame', attachments: 'photo-78383037_341511373'}, function(r) {console.log(r); });
+
+
+
+
     }
 };
 
