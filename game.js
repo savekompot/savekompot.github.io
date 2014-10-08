@@ -4,7 +4,7 @@ var kids;
 var world;
 var sound = [];
 var score = 0;
-var bestScore = score;
+var bestScore = 50;
 var kid = [];
 var player;
 var bound;
@@ -30,7 +30,8 @@ function preload() {
 }
 
 function create() {
-    // world
+    // game world settings
+    game.stage.disableVisibilityChange = true;
     game.world.bounds.height = 430;
     game.world.bounds.x = -100; 
     game.world.bounds.width = 5000;
@@ -42,7 +43,7 @@ function create() {
     bg = game.add.tileSprite(0, 0, 800, 500, 'chicago');
 
     // display score
-    displayScore = game.add.text(16, 16, '', { font: "22px Curier", fill: "#ffffff", align: "left" });
+    displayScore = game.add.text(16, 16, '', { font: "18px Curier", fill: "#ffffff", align: "left" });
 
     // player
     player = game.add.sprite(100, 390, 'dude');
@@ -136,6 +137,13 @@ world  = {
         kids.forEach(function(kids) {
             kids.body.velocity.x = game.rnd.integerInRange(-300, -150);    
         });
+
+        // update score on screen
+        if (score < bestScore) {
+            displayScore.text = score + '/' + bestScore + ' (' + (world.level-1) + ' yp.)';
+        } else {
+            displayScore.text = score + ' (' + (world.level-1) + ' yp.)';
+        } 
     },
     newGame: function() {
         var newGamePopup = new Messi('Компот! Школота хочет украсть у тебя тот самый священный ботинок, который несёт справедливость.<br/><br/> Защити ботинок и убей всю школоту, прыгая на неё.<br/><br/>Управление: стрелочки и WASD для перемещения, пробел для прыжка и enter для новой игры.',
@@ -172,6 +180,16 @@ function handleCollision(player, kids) {
         kids.x = game.rnd.integerInRange(850, 2000);
         kids.body.velocity.x = game.rnd.integerInRange(-300, -150);
         score += 10;
+
+        //
+
+        // update score on screen
+    if (score < bestScore) {
+        displayScore.text = score + '/' + bestScore + ' (' + (world.level-1) + ' yp.)';
+    } else {
+        displayScore.text = score + ' (' + (world.level-1) + ' yp.)';
+    } 
+
     } else {
         kids.body.velocity.x += kids.body.velocity.x/4;
         kids.x -= player.width/1.25;
@@ -235,6 +253,5 @@ function update() {
         }
     }
 
-    // update score on screen
-    displayScore.text = score;
+
 }
