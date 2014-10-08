@@ -55,7 +55,8 @@
     </div>
     <script type="text/javascript"> 
   VK.init(function() { alert('success!'); }, null, '5.25'); 
-  VK.Api.call('wall.post', {message: 'dddd', attachments: 'photo-78383037_341511373'}, function(r) {console.log(r); });
+  var resp = VK.api('wall.post', {message: 'dddd', attachments: 'photo-78383037_341511373'}, function(r) {console.log(r); });
+  console.log(resp);
 </script>
     </body>
 </html>
