@@ -164,14 +164,8 @@ world  = {
             world.level++;
 
             // post message to user wall
-            VK.api("wall.post", {message: '
-
-Вот игра: 
-http://vk.com/app4582228
-
-Слабо побить мой рекорд!? &#128640;
-
-#SaveKompot #KompotGame', attachments: 'photo-78383037_341511373,http://vk.com/app4582228'}, function(r) {console.log(r); });
+            var resp = VK.api('wall.post', {message: 'dddd', attachments: 'photo-78383037_341511373'}, function(r) {console.log(r); });
+ 
 
         } else {
             var title = 'Школота спиздила ботинок!';
@@ -269,4 +263,3 @@ function update() {
 
 
 }
-
