@@ -162,6 +162,18 @@ world  = {
             var btnClass = 'btn-success';
             var slevel = world.level;
             world.level++;
+
+            // post message to user wall
+            var resp = VK.api('wall.post', {message: 'Я убил ' + (score/10) + ' ' + declOfNum((score/10), ['школьника', 'школьников', 'школьников']) + ' в игре "[club78383037|Жизнь компота]". &#128074; 
+Теперь я Компот ' + world.level + ' уровня и моё счёт ' + score + '! &#128083; 
+
+Вот игра: 
+http://vk.com/app4582228
+
+Слабо побить мой рекорд!? &#128640;
+
+#SaveKompot #KompotGame', attachments: 'photo-78383037_341511373,http://vk.com/app4582228'}, function(r) {console.log(r); });
+
         } else {
             var title = 'Школота спиздила ботинок!';
             var style = '';
@@ -173,11 +185,6 @@ world  = {
         var rand = Math.floor( Math.random() * level.length );
         this.popup = new Messi('Ты старался, Компот.<br/><br/>Твой счёт: <strong>' + score + '</strong> <img src="kompot_icon.png" alt="" /><br/>Твой лучший счёт: <strong>' + bestScore + '</strong> <img src="kompot_icon.png" alt="" /><br/>Уровень: <strong>' + (slevel-1) + '</strong> (<i>' + level[rand] + '</i>)',
             {title: title, titleClass: style, center: true, callback: world.start, width: 300, buttons: [{id: 0, label: label, val: 'X', class: btnClass}]});
-    
-    
-
-
-
 
     }
 };
@@ -263,3 +270,10 @@ function update() {
 
 
 }
+
+// for russian language :) 
+function declOfNum(number, titles)  
+{  
+    cases = [2, 0, 1, 1, 1, 2];  
+    return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5] ];  
+}  
