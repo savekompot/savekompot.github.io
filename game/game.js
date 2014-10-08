@@ -166,7 +166,7 @@ world  = {
             world.level++;
 
             // post message to user wall
-            var resp = VK.api('wall.post', {message: "Я убил 13 школьников в игре [club78383037|Жизнь компота]. \n Теперь я Компот 3 уровня! \n \n Вот игра: http://vk.com/app4582228 \n Слабо побить мой рекорд!? \n \n #SaveKompot #KompotGame", attachments: 'photo-78383037_341511373,http://vk.com/app4582228'}, function(r) {console.log(r); });
+            var resp = VK.api('wall.post', {message: "Я убил " + (score/10) + " школьников в игре [club78383037|Жизнь компота]. \n Теперь я Компот " + world.level + " уровня и мой счёт " + score + "! \n \n Вот игра: http://vk.com/app4582228 \n Слабо побить мой рекорд!? ;-) \n \n #SaveKompot #KompotGame", attachments: 'photo-78383037_341511373,http://vk.com/app4582228'}, function(r) {console.log(r); });
             
 
         } else {
