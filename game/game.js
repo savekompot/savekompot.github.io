@@ -156,11 +156,11 @@ world  = {
         // update best score
         if (score > bestScore) {
             bestScore = score;
-            world.level++;
             var title = 'Новый рекорд!';
             var style = 'success';
             var label = 'Перейти на <strong>' + (world.level-1) + '</strong> уровень!';
             var btnClass = 'btn-success';
+            world.level++;
         } else {
             var title = 'Школота спиздила ботинок!';
             var style = '';
