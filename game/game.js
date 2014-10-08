@@ -164,7 +164,7 @@ world  = {
             world.level++;
 
             // post message to user wall
-            var resp = VK.api('wall.post', {message: '
+            VK.api("wall.post", {message: '
 
 Вот игра: 
 http://vk.com/app4582228
