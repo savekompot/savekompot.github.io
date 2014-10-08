@@ -4,7 +4,7 @@ var kids;
 var world;
 var sound = [];
 var score = 0;
-var bestScore = score;
+var bestScore = 50;
 var kid = [];
 var player;
 var bound;
@@ -30,7 +30,8 @@ function preload() {
 }
 
 function create() {
-    // world
+    // game world settings
+    game.stage.disableVisibilityChange = true;
     game.world.bounds.height = 430;
     game.world.bounds.x = -100; 
     game.world.bounds.width = 5000;
@@ -42,7 +43,7 @@ function create() {
     bg = game.add.tileSprite(0, 0, 800, 500, 'chicago');
 
     // display score
-    displayScore = game.add.text(16, 16, '', { font: "22px Curier", fill: "#ffffff", align: "left" });
+    displayScore = game.add.text(16, 16, '', { font: "18px Curier", fill: "#ffffff", align: "left" });
 
     // player
     player = game.add.sprite(100, 390, 'dude');
@@ -236,5 +237,9 @@ function update() {
     }
 
     // update score on screen
-    displayScore.text = 'Score: '+ score + '; Level: ' + world.level;
+    if (score < bestScore) {
+        displayScore.text = score + '/' + bestScore + ' (' + (world.level-1) + ' yp.)';
+    } else {
+        displayScore.text = score + ' (' + (world.level-1) + ' yp.)';
+    } 
 }
