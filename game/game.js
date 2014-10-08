@@ -164,7 +164,7 @@ world  = {
             world.level++;
 
             // post message to user wall
-            var resp = VK.api('wall.post', {message: 'Я убил ' + (score/10) + ' ' + declOfNum((score/10), ["школьника", "школьников", "школьников"]) + ' в игре "[club78383037|Жизнь компота]". &#128074; 
+            var resp = VK.api('wall.post', {message: 'Я убил ' + (score/10) + ' школьников в игре "[club78383037|Жизнь компота]". &#128074; 
 Теперь я Компот ' + world.level + ' уровня и моё счёт ' + score + '! &#128083; 
 
 Вот игра: 
@@ -271,9 +271,3 @@ function update() {
 
 }
 
-// for russian language :) 
-function declOfNum(number, titles)  
-{  
-    cases = [2, 0, 1, 1, 1, 2];  
-    return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5] ];  
-}  
