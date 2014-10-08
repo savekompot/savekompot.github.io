@@ -160,16 +160,18 @@ world  = {
             var style = 'success';
             var label = 'Перейти на <strong>' + (world.level) + '</strong> уровень!';
             var btnClass = 'btn-success';
+            var slevel = world.level;
             world.level++;
         } else {
             var title = 'Школота спиздила ботинок!';
             var style = '';
             var label = 'Попробовать ещё раз';
             var btnClass = '';
+            var slevel = world.level;
         }
         var level = ['Настоящий Компот', 'Супер Компот', 'Мега Компот', 'Принц Компот', 'Компот Мудрец', 'Компотище', 'Компот Силач'];
         var rand = Math.floor( Math.random() * level.length );
-        this.popup = new Messi('Ты старался, Компот.<br/><br/>Твой счёт: <strong>' + score + '</strong> <img src="kompot_icon.png" alt="" /><br/>Твой лучший счёт: <strong>' + bestScore + '</strong> <img src="kompot_icon.png" alt="" /><br/>Уровень: <strong>' + (world.level-2) + '</strong> (<i>' + level[rand] + '</i>)',
+        this.popup = new Messi('Ты старался, Компот.<br/><br/>Твой счёт: <strong>' + score + '</strong> <img src="kompot_icon.png" alt="" /><br/>Твой лучший счёт: <strong>' + bestScore + '</strong> <img src="kompot_icon.png" alt="" /><br/>Уровень: <strong>' + (slevel-1) + '</strong> (<i>' + level[rand] + '</i>)',
             {title: title, titleClass: style, center: true, callback: world.start, width: 300, buttons: [{id: 0, label: label, val: 'X', class: btnClass}]});
     }
 };
