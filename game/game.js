@@ -159,7 +159,7 @@ world  = {
             world.level++;
             var title = 'Новый рекорд!';
             var style = 'success';
-            var label = 'Перейти на <strong>' + world.level + '</strong> уровень!';
+            var label = 'Перейти на <strong>' + (world.level-1) + '</strong> уровень!';
             var btnClass = 'btn-success';
         } else {
             var title = 'Школота спиздила ботинок!';
