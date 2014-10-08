@@ -1,3 +1,5 @@
+VK.init(function() { alert('success!'); }, null, '5.25'); 
+
 var game = new Phaser.Game(700, 500, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update });
 
 var kids;
