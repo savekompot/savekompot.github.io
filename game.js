@@ -236,5 +236,5 @@ function update() {
     }
 
     // update score on screen
-    displayScore.text = score;
+    displayScore.text = 'Score: '+ score + '; Level: ' + world.level;
 }
