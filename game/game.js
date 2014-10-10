@@ -99,6 +99,8 @@ function create() {
     $('.loading').remove();
     $('canvas').css('opacity', 1);
 
+     console.log(player);
+
 }
 
 // to control the game world
@@ -207,7 +209,7 @@ function handleCollision(player, kids) {
 }
 
 function update() {
-    if (player.y > 420) document.location.reload(true);
+
 
     // start new game if score was shown
     if (world.isStopped == true && game.input.keyboard.isDown(Phaser.Keyboard.ENTER) && world.popup != null) {
