@@ -151,7 +151,7 @@ world  = {
     },
     newGame: function() {
         var newGamePopup = new Messi('Компот! Школота хочет украсть у тебя тот самый священный ботинок, который несёт справедливость.<br/><br/> Защити ботинок и убей всю школоту, прыгая на неё.<br/><br/>Управление: стрелочки и WASD для перемещения, пробел для прыжка и enter для новой игры.',
-            {title: 'Привет, бродяга!', center: true, callback: world.start, width: 450, buttons: [{id: 0, label: 'Я готов!', val: 'X'}]});
+            {title: 'Привет, бродяга!', viewport: {top: '250px'}, callback: world.start, width: 450, buttons: [{id: 0, label: 'Я готов!', val: 'X'}]});
 
     },
 
@@ -232,6 +232,7 @@ function update() {
         world.stop();
         world.showScore();
         cmBlock.setupMidroll( 24633, { transparent: false } );
+        console.log('show midroll');
     }, null, this);
 
 
