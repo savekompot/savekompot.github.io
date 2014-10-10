@@ -231,7 +231,7 @@ function update() {
     game.physics.arcade.collide(kids, bound, function() {
         world.stop();
         world.showScore();
-        var midroll = cmBlock.setupMidroll( 24633, { transparent: false } );
+        var midroll = cmBlock.setupMidroll( 24633, { transparent: true } );
         console.log(midroll);
     }, null, this);
 
