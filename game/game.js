@@ -170,7 +170,7 @@ world  = {
             
 
         } else {
-            var title = 'Школота спиздила ботинок!';
+            var title = 'Школота угнала ботинок!';
             var style = '';
             var label = 'Попробовать ещё раз';
             var btnClass = '';
