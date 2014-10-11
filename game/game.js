@@ -95,7 +95,7 @@ function create() {
 
     world.stop();
     world.newGame();
-    $('.loading').remove();
+    $('.loading').hide();
     $('canvas').css('opacity', 1);
     $('body').append('<div id="vk_comments"></div>');
     VK.Widgets.Comments('vk_comments', {limit: 10, height: '500', width: '700', attach: '*', pageUrl: "http://vk.com/app4582228"});
@@ -211,7 +211,14 @@ function handleCollision(player, kids) {
 }
 
 function update() {
-
+    // on/off music
+    if (game.input.keyboard.isDown(Phaser.Keyboard.R)) {
+        if (!sound['main'].isPlaying) {
+            sound['main'].play('', 0, 0.5, 1);
+        } else {
+            sound['main'].stop();
+        }
+    }
 
     // start new game if score was shown
     if (world.isStopped == true && game.input.keyboard.isDown(Phaser.Keyboard.ENTER) && world.popup != null) {
@@ -233,7 +240,7 @@ function update() {
     game.physics.arcade.collide(kids, bound, function() {
         world.stop();
         world.showScore();
-        var midroll = cmBlock.setupMidroll( 24633, { transparent: true, onNoAdv: function() {
+        var midroll = cmBlock.setupMidroll( 24633, { transparent: false, onNoAdv: function() {
             console.log('noadv');}
         }  );
         console.log(midroll);
