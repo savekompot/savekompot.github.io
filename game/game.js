@@ -235,7 +235,7 @@ function update() {
         world.showScore();
         var midroll = cmBlock.setupMidroll( 24633, { transparent: true, onNoAdv: function() {
             console.log('noadv');}
-        } } );
+        }  );
         console.log(midroll);
     }, null, this);
 
