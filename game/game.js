@@ -99,7 +99,7 @@ function create() {
     $('.loading').remove();
     $('canvas').css('opacity', 1);
     $('body').append('<div id="vk_comments"></div>');
-    VK.Widgets.Comments('vk_comments', {limit: 7, height: '500', width: '700', attach: '*', pageUrl: "http://vk.com/app4582228"});
+    VK.Widgets.Comments('vk_comments', {limit: 5, height: '500', width: '700', attach: '*', pageUrl: "http://vk.com/app4582228"});
 
     console.log(player);
 
