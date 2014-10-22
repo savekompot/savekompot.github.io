@@ -132,7 +132,7 @@ world  = {
             bg.loadTexture('chicago');
         }
 
-        $('#vk_ads_5217').hide();
+
         game.world.alpha = 1;
         player.visible = true;
         bound.x = 10;
@@ -181,7 +181,7 @@ world  = {
             var btnClass = '';
             var slevel = world.level;
         }
-        $('#vk_ads_5217').show();
+
         var level = ['Настоящий Компот', 'Супер Компот', 'Мега Компот', 'Принц Компот', 'Компот Мудрец', 'Компотище', 'Компот Силач'];
         var rand = Math.floor( Math.random() * level.length );
         this.popup = new Messi('Ты старался, Компот.<br/><br/>Твой счёт: <strong>' + score + '</strong> <img src="kompot_icon.png" alt="" /><br/>Уровень: <strong>' + (slevel-1) + '</strong> (<i>' + level[rand] + '</i>)<br/>Когда новый уровень: <strong>' + bestScore + '</strong> <img src="kompot_icon.png" alt="" />',
