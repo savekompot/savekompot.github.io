@@ -52,11 +52,21 @@
         .vk_comments {
         overflow-x: scroll;
         }
+        .st {
+            z-index: 999999;
+            margin-top:100px;
+        }
+
         </style>
     </head>
     <body>
-    <div id="vk_ads_5217"></div>
-<script type="text/javascript">
+
+    <div id="vk_ads_5217" class="st"></div>
+    <script type="text/javascript">
+    $('#vk_ads_5217').hide();
+    </script>
+
+    <script type="text/javascript">
   setTimeout(function() {
     var adsParams = {"ad_unit_id":5217,"ad_unit_hash":"6148b6bef287facd817d4d73edeaeb7c"};
     function vkAdsInit() {
