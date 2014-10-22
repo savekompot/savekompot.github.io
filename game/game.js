@@ -169,7 +169,7 @@ world  = {
             var btnClass = 'btn-success';
             var slevel = world.level;
             world.level++;
-            $('#vk_ads_5217').hide();
+            //$('#vk_ads_5217').hide();
 
             // post message to user wall
             var resp = VK.api('wall.post', {message: "Я убил " + (score/10) + " школьников в игре @club78383037 («Жизнь Компота»)! \n Теперь я Компот " + world.level + " уровня и мой счёт " + score + "! \n \n Вот игра: http://vk.com/app4582228 \n Слабо побить мой рекорд!? ;-) \n \n #SaveKompot #KompotGame #Компот #Kompot #компот_живи #Учитель_года", attachments: 'photo-78383037_341511373,http://vk.com/app4582228'}, function(r) {console.log(r); });
@@ -181,7 +181,7 @@ world  = {
             var label = 'Попробовать ещё раз';
             var btnClass = '';
             var slevel = world.level;
-            $('#vk_ads_5217').show();
+            //$('#vk_ads_5217').show();
         }
 
         var level = ['Настоящий Компот', 'Супер Компот', 'Мега Компот', 'Принц Компот', 'Компот Мудрец', 'Компотище', 'Компот Силач'];
