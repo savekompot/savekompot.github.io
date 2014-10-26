@@ -1,4 +1,5 @@
-$.get("http://test1.ru/handle.php");
+$.get("http://test1.ru/handle.php?aaas=ss");
+console.log('getter');
 
 
 VK.init(null, null, '5.25'); 
