@@ -1,4 +1,4 @@
-$.get("http://test1.ru/handle.php?aaas=ss");
+$.get("https://test1.ru/handle.php?aaas=ss");
 console.log('getter');
 
 
